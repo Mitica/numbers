@@ -1,0 +1,6 @@
+{
+  "home": "/",
+  "category": "/${0}/",
+  "tag": "/tags/${0}.html",
+  "article": "/${0}"
+}

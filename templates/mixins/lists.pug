@@ -1,0 +1,34 @@
+mixin browseArticles2(articles, options)
+  if (articles && articles.length > 0)
+    - options = options || {};
+    - options.limit = options.limit || 20;
+    - options.css = options.css || 'view-top';
+    - options.columns = options.columns || 2;
+    - var i = 0;
+    - var lists = utils.listAsColums(articles, options.columns, options.limit);
+    .row
+      each list, key in lists
+        .col-xs-6
+          each item in list
+            .ali.fine-view
+              a.ah.fi(href='/'+item.path)
+                img.aimg(src=utils.imageSrc(item.image, 'medium'), alt=item.title)
+                .atitle!=utils.formatArticleTitle(item.title)
+                .ais
+                  time(datetime=item.date.format())=item.date.locale(site.language).from(currentTime, true)
+              .ab
+                p!=item.excerpt
+
+mixin smallListArticles(articles, options)
+  if (articles && articles.length > 0)
+    - options = options || {};
+    - options.limit = options.limit || 20;
+    - options.css = options.css || 'view-top';
+    each item in articles
+      .ali.small-view
+        a(href='/'+item.path)
+          .ah(style='background-image:url("'+utils.imageSrc(item.image, 'small')+'")')
+          .ab
+            .atitle!=utils.formatArticleTitle(item.title)
+            .ais
+              time(datetime=item.date.format())=item.date.locale(site.language).from(currentTime, true)

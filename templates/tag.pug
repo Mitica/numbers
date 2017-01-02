@@ -1,0 +1,7 @@
+
+extends default
+
+block content
+  h1.lhead
+    span= tag
+  +browseArticles2(pagination.files, {limit: 20})

@@ -1,0 +1,23 @@
+
+extends root
+
+block head
+  if (image)
+    meta(property="og:image", content=utils.imageSrc(image, 'large'))
+
+block page_main
+  .row
+    .col-sm-8
+      block content
+    .col-sm-4
+      aside
+        if (['index'].indexOf(pageType)<0)
+          section.group
+            h3.group-title Articole noi
+            .droup-content
+              +smallListArticles(articles, {limit: 5})
+        block aside
+        section.group
+          h3.group-title Interesant
+          .droup-content
+            +smallListArticles(randomArticles, {limit: 5})

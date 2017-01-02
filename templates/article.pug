@@ -1,0 +1,35 @@
+
+extends default
+
+block append head
+  meta(property="og:type", content="article")
+  if (categories)
+    each item in categories
+      meta(property="article:section", content=site.categories[item.slug].name)
+  if (tags)
+    each item in tags
+      meta(property="article:tag", content=item.name)
+
+block content
+  article
+    header
+      .ali.fine-view
+        a.ah.fi(href='/'+path)
+          img.aimg(src=utils.imageSrc(image, 'large'), alt=title)
+          h1.atitle!=utils.formatArticleTitle(title)
+          .ais
+            time(datetime=date.format())=date.locale(site.language).from(currentTime, true)
+      ul.al-stats.stats-main
+        li.al-date= date.locale(site.language).format('LL')
+        if (categories)
+          each item in categories
+            li.al-category
+              a(href=links.category(item.slug))= site.categories[item.slug].name
+        //- li.al-views= article.countViews
+    != contents
+
+    footer
+      if (tags)
+        .al-tags
+          each item in tags
+            a(href=links.tag(item.slug))= item.name

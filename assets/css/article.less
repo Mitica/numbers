@@ -1,0 +1,93 @@
+article {
+    font-size: 16px;
+    p a {
+        color: @brand-primary;
+        text-decoration: underline;
+    }
+    .ali {
+        .atitle {
+            padding: 25px!important;
+        }
+    }
+}
+
+table.article-table {
+    max-width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    empty-cells: show;
+    border: 1px solid #eee;
+    margin: 20px auto;
+    font-size: 90%;
+    th,
+    td {
+        padding: 5px 12px;
+    }
+    thead tr {
+        border-bottom: 1px solid #cbcbcb;
+        background-color: #f3f3f3;
+    }
+    tr {
+        border-bottom: 1px solid #dfdfdf;
+    }
+}
+
+.al-t {
+    margin-top: 5px;
+}
+
+.cell-no {
+    text-align: right;
+}
+
+.cell-txt {
+    text-align: left;
+}
+
+.chart-line {
+    height: 200px;
+}
+
+.al-stats {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 11px;
+    color: @text-muted;
+    &.stats-main {
+        font-size: 14px;
+        line-height: 16px;
+        margin: 16px 0px;
+        li {
+            &:after {
+                content: '/';
+                position: relative;
+                margin-left: 10px;
+                color: lighten(@text-muted, 20%);
+            }
+        }
+    }
+    li {
+        display: inline-block;
+        margin-right: 10px;
+    }
+    /*.al-views {
+        position: relative;
+        padding-left: 20px;
+        &:before {
+            background-image: url(/assets/img/i1.png);
+            background-repeat: no-repeat;
+            background-position: 1px 0px;
+            height: 15px;
+            width: 15px;
+            position: absolute;
+            left:0px;
+            top: 50%;
+            margin-top: -5px;
+            content:'';
+            opacity: .45;
+        }
+    }*/
+}

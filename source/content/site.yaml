@@ -1,0 +1,25 @@
+name: 'numbers'
+title: 'Numbers'
+description: 'Description'
+host: 'numbers.info'
+language: ro
+locale: ro_RO
+
+authors:
+  dumitru:
+    name: Dumitru
+    slug: dumitru
+
+categories:
+  test:
+    name: Test
+    slug: test
+  live:
+    name: Live
+    slug: live
+  politics:
+    name: Politica
+    slug: politics
+  economy:
+    name: Economic
+    slug: economy

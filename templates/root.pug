@@ -1,0 +1,51 @@
+doctype html
+html(lang=site.language)
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title= (title || site.title)
+    meta(name='description', content=(excerpt || site.description))
+    block head
+    link(type='text/css', rel='stylesheet', href='/assets/css/main.css')
+    if (path)
+      link(rel='canonical', href=('/'+path.replace(/index.html$/, '')))
+
+    if (site.facebookId)
+      meta(property='fb:app_id', content=site.facebookId)
+
+    if (site.facebookPageId)
+      meta(property="fb:pages", content=site.facebookPageId)
+
+    link(rel='publisher', href='https://facebook.com/'+ site.host)
+    meta(property='og:site_name', content=site.name)
+    meta(property='og:locale', content=site.locale)
+    block meta
+
+  body()
+    #fb-root
+    header#page-header.clearfix
+      .container
+        .row
+          .col-xs-5.col-sm-4.col-md-2
+            a#page-logo(href='/', title=site.name)= site.name
+          .col-xs-5.col-sm-8.col-md-7
+            ul#page-menu
+              each item in site.categories
+                li
+                  a(href=links.category(item.slug))= item.name
+          .hidden-xs.hidden-sm.col-md-3
+    main#page-main
+      .container
+        include mixins/lists
+        block page_main
+    footer#page-footer
+      .container
+        .row
+          .col-sm-4.col-xs-12
+          .col-sm-4.col-xs-12
+          .col-sm-4.col-xs-12
+
+    script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js')
+    script(type='text/javascript', src='/assets/js/main.js')
+    block scripts

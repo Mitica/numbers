@@ -1,0 +1,8 @@
+
+extends default
+
+block content
+  - var category = site.categories[tag];
+  h1.lhead
+    span= category.name
+  +browseArticles2(pagination.files, {limit: 20})

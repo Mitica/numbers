@@ -1,0 +1,41 @@
+body {
+    background-color: @layout-color;
+    color: rgba(0, 0, 0, 0.8);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+    display: block;
+}
+
+input,
+button,
+select,
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+textarea {
+    .border-radius(3px);
+    padding: 4px 6px;
+    border: 1px solid #ddd;
+}
+
+fieldset {
+    border: none;
+}
+
+a {
+    cursor: pointer;
+}
+
+img{
+    max-width: 100%;
+}

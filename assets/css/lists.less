@@ -1,0 +1,113 @@
+// fine image
+.fi {
+    position: relative;
+    display: block;
+    height: 0;
+    padding: 0 0 56.25%;
+    overflow: hidden;
+    border-radius: @border-radius;
+    img {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        border: 0;
+        background-color: #eee;
+    }
+}
+
+.ali {
+    .clearfix();
+    margin-bottom: 20px;
+    .ais {
+        font-size: 90%;
+        text-decoration: none;
+    }
+    &.fine-view {
+        .ah {
+            background-color: #111;
+            position: relative;
+            &:hover {
+                background-color: #000;
+                .atitle {
+                    span {
+                        color: @link-hover-color;
+                    }
+                }
+            }
+        }
+        .aimg {
+            opacity: 0.8;
+        }
+        .atitle {
+            color: @layout-reverse-color;
+            font-weight: bold;
+            font-size: 180%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 16px 10px 10px 10px;
+            text-align: center;
+            line-height: 1.1;
+            .text-shadow(1px 1px 1px #333);
+            margin: 0;
+            /*background-color: rgba(10, 10, 10, 0.5);*/
+            #gradient >.vertical(rgba(10, 10, 10, 0), rgba(10, 10, 10, 0.9));
+            span {
+                font-style: italic;
+                font-size: 180%;
+                position: relative;
+                display: inline-block;
+                &::before {
+                    display: block;
+                    content: '';
+                    height: 0px;
+                    border-bottom: 4px solid @link-hover-color;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                }
+            }
+            &h1,
+            &h4,
+            &h3,
+            &h2 {
+                font-size: inherit;
+            }
+        }
+        .ais {
+            position: absolute;
+            font-size: 90%;
+            color: @layout-reverse-color;
+            right: 2%;
+            top: 3%;
+            background-color: #555;
+            background-color: rgba(10, 10, 10, 0.5);
+            border-radius: @border-radius;
+            padding: 0px 4px;
+        }
+    }
+    &.small-view {
+        .atitle {
+            font-weight: bold;
+        }
+        .ah {
+            float: left;
+            margin: 0px 20px 0px 0px;
+            width: 100px;
+            height: 70px;
+            border-radius: @border-radius;
+            overflow: hidden;
+            background-size: cover;
+        }
+        .ab {
+            overflow: hidden;
+        }
+        .ais {
+            color: @muted-color;
+        }
+    }
+}
